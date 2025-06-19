@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestranzas Unidos S.A.</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-cubes logo-icon"></i>
+                <span class="logo-text">Maestranzas Unidos S.A.</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#" data-view="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li><a href="#" data-view="registroInventario"><i class="fas fa-boxes"></i><span>Registro Inventario</span></a></li>
+                    <li><a href="#" data-view="seguimientoMovimientos"><i class="fas fa-exchange-alt"></i><span>Movimientos</span></a></li>
+                    <li><a href="#" data-view="alertasStock"><i class="fas fa-bell"></i><span>Alertas de Stock</span></a></li>
+                    <li><a href="#" data-view="controlLotes"><i class="fas fa-calendar-alt"></i><span>Control de Lotes</span></a></li>
+                    <li><a href="#" data-view="etiquetasCategorias"><i class="fas fa-tags"></i><span>Etiquetas/Categorías</span></a></li>
+                    <li class="nav-section-title">DATOS Y REPORTES</li>
+                    <li><a href="#" data-view="historialPrecios"><i class="fas fa-dollar-sign"></i><span>Historial Precios</span></a></li>
+                    <li><a href="#" data-view="gestionKits"><i class="fas fa-cogs"></i><span>Gestión de Kits</span></a></li>
+                    <li><a href="#" data-view="generacionInformes"><i class="fas fa-file-alt"></i><span>Generación de Reportes</span></a></li>
+                    <li class="nav-section-title">GESTIÓN EXTERNA</li>
+                    <li><a href="#" data-view="gestionProveedores"><i class="fas fa-truck"></i><span>Proveedores</span></a></li>
+                    <li><a href="#" data-view="integracionCompras"><i class="fas fa-shopping-basket"></i><span>Integración Compras</span></a></li>
+                    <li class="nav-section-title">SISTEMA</li>
+                    <li><a href="#" data-view="configuracion"><i class="fas fa-cog"></i><span>Configuración</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="main-header">
+                <div class="header-title">
+                    <h1 id="current-view-title">Dashboard</h1>
+                </div>
+                <div class="header-user-actions">
+                    <div class="notification-area">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge" id="low-stock-badge">0</span>
+                    </div>
+                    <div class="user-profile">
+                        <span>Usuario Admin</span>
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="theme-toggler">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content-area" id="content-area">
+                <!-- Contenido dinámico por JS -->
+            </main>
+
+            <div id="inventory-modal" class="modal">
+              <div class="modal-content">
+                <span class="close-button">×</span>
+                <h2>Registro de Nuevo Artículo</h2>
+                <form id="inventory-form">
+                  <div class="form-group">
+                    <label for="item-name">Nombre del Artículo:</label>
+                    <input type="text" id="item-name" name="itemName" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="item-description">Descripción:</label>
+                    <input type="text" id="item-description" name="itemDescription">
+                  </div>
+                  <div class="form-group">
+                    <label for="item-sku">SKU / Código:</label>
+                    <input type="text" id="item-sku" name="itemSku" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="item-serial">Número de Serie (Opcional):</label>
+                    <input type="text" id="item-serial" name="itemSerial">
+                  </div>
+                  <div class="form-group">
+                    <label for="item-location-select">Ubicación (Bodega):</label>
+                    <select id="item-location-select" name="itemLocation" required>
+                        <option value="" disabled selected>-- Seleccione una Bodega --</option>
+                        <option value="BCC">BCC - Bodega Central de Componentes</option>
+                        <option value="ARC">ARC - Almacén de Repuestos Críticos</option>
+                        <option value="BNF">BNF - Bodega Norte - Fabricación</option>
+                        <option value="DLQ">DLQ - Depósito de Lubricantes y Químicos</option>
+                        <option value="BSMP">BSMP - Bodega Sur - Mantenimiento Pesado</option>
+                        <option value="AKE">AKE - Almacén de Kits y Ensamblajes</option>
+                        <option value="BTR">BTR - Bodega de Tránsito y Recepción</option>
+                        <option value="PAMV">PAMV - Patio de Aceros y Materiales Voluminosos</option>
+                        <option value="BHE">BHE - Bodega de Herramientas Especializadas</option>
+                        <option value="ACG">ACG - Almacén de Consumibles Generales</option>
+                    </select>
+                  </div>
+                   <div class="form-group">
+                    <label for="item-quantity">Cantidad Inicial:</label>
+                    <input type="number" id="item-quantity" name="itemQuantity" min="0" value="0" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="item-min-stock">Nivel Mínimo de Stock (para alertas):</label>
+                    <input type="number" id="item-min-stock" name="itemMinStock" min="0" value="3">
+                  </div>
+                  <div class="form-group">
+                    <label for="item-image">Imagen del Artículo (opcional):</label>
+                    <input type="file" id="item-image" name="itemImage" accept="image/*"> 
+                    <img id="image-preview" src="#" alt="Vista previa" style="max-width: 150px; max-height: 150px; margin-top: 10px; display: none; border: 1px solid #ddd; padding: 2px;">
+                  </div>
+                  <button type="submit" class="btn-submit">Agregar Artículo</button>
+                </form>
+              </div>
+            </div>
+
+            <footer class="main-footer">
+                <p>© <span id="current-year"></span> Maestranzas Unidos S.A. - Gerente de la Empresa Don Ignacio de la fuente</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
