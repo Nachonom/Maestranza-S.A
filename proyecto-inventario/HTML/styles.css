@@ -1,18 +1,18 @@
 /* Estilos Generales y Variables CSS */
 :root {
     --primary-color: #007bff;
-    --sidebar-bg: #1e293b; /* Azul oscuro/gris para la sidebar */
+    --sidebar-bg: #1e293b;
     --sidebar-text-color: #cbd5e1;
     --sidebar-active-bg: #334155;
     --sidebar-hover-bg: #2c3a4e;
-    --main-bg: #a6f40b; /* Fondo claro para el área principal */
+    --main-bg: #a6f40b;
     --text-color: #333;
-    --text-muted-color: #6c757d; /* Color original para texto silenciado */
-    --text-on-dark-bg: #f0f0f0; /* NUEVA VARIABLE: Texto claro para fondos oscuros */
-    --card-bg: #fafafa; /* Para modal y otros elementos claros */
+    --text-muted-color: #6c757d;
+    --text-on-dark-bg: #f0f0f0;
+    --card-bg: #fafafa;
     --card-border-color: #e2e8f0;
-    --header-bg: #063986; /* TU AZUL MARINO PARA HEADER Y FOOTER */
-    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* AJUSTE: Sombra un poco más notoria si se mantiene */
+    --header-bg: #063986;
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     --font-family: 'Roboto', sans-serif;
 
     --blue-accent: #2563eb;
@@ -20,9 +20,9 @@
     --yellow-accent: #f59e0b;
     --red-accent: #ef4444;
     --purple-accent: #8b5cf6;
-    --orange-accent: #f97316; /* Naranja para dashboard card */
-    --teal-accent: #14b8a6; /* Teal para dashboard card */
-    --dark-card-bg: #2d3748; /* ESTE ES EL IMPORTANTE PARA LAS TARJETAS DEL DASHBOARD */
+    --orange-accent: #f97316;
+    --teal-accent: #14b8a6;
+    --dark-card-bg: #2d3748; /* Para las tarjetas del dashboard */
 }
 
 /* Importar Google Font (Roboto) */
@@ -125,7 +125,6 @@ body {
     color: var(--primary-color); 
 }
 
-
 .nav-section-title {
     padding: 15px 20px 5px;
     font-size: 12px;
@@ -134,7 +133,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 
 /* Main Content Area Styles */
 .main-content {
@@ -196,7 +194,6 @@ body {
     text-align: center;
 }
 
-
 .user-profile span {
     margin-right: 8px;
     font-size: 15px;
@@ -216,7 +213,6 @@ body {
     font-weight: 500;
 }
 
-
 /* Footer Styles */
 .main-footer {
     background-color: var(--header-bg); 
@@ -227,7 +223,7 @@ body {
     border-top: 1px solid #002a5c; 
 }
 
-/* ESTILOS PARA LAS TARJETAS DEL DASHBOARD (OSCURAS) */
+/* ESTILOS PARA LAS TARJETAS DEL DASHBOARD */
 .dashboard-grid { 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
@@ -284,7 +280,6 @@ body {
 .card-icon-container.orange { background-color: var(--orange-accent); }
 .card-icon-container.teal { background-color: var(--teal-accent); }
 
-
 /* Estilos para el Modal */
 .modal {
   display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); 
@@ -305,16 +300,16 @@ body {
 #inventory-form label { display: block; margin-bottom: 6px; font-weight: 500; color: #444; font-size:14px; }
 #inventory-form input[type="text"], 
 #inventory-form input[type="number"],
-#inventory-form select { /* AÑADIDO: select para que comparta estilos */
+#inventory-form select {
     width: 100%; 
     padding: 9px 12px; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
     font-size: 15px;
-    background-color: white; /* Fondo blanco para el select */
+    background-color: white;
 }
 
-/* === INICIO: Estilos para el input de archivo y previsualización === */
+/* Estilos para el input de archivo y previsualización */
 #inventory-form input[type="file"] {
     padding: 8px;
     border: 1px solid #ccc;
@@ -322,11 +317,9 @@ body {
     font-size: 14px;
     background-color: #fff;
     cursor: pointer;
-    display: block; /* Para que ocupe su propia línea */
-    margin-top: 5px; /* Pequeño margen superior */
+    display: block; 
+    margin-top: 5px; 
 }
-
-/* Estilo para el botón del input de archivo en navegadores WebKit (Chrome, Safari, Edge) */
 #inventory-form input[type="file"]::-webkit-file-upload-button {
     background-color: var(--primary-color);
     color: white;
@@ -337,8 +330,6 @@ body {
     margin-right: 10px;
     font-size: 14px;
 }
-
-/* Estilo estándar para el botón del input de archivo */
 #inventory-form input[type="file"]::file-selector-button {
     background-color: var(--primary-color);
     color: white;
@@ -349,13 +340,10 @@ body {
     margin-right: 10px;
     font-size: 14px;
 }
-
-#image-preview { /* Estilo para la imagen de previsualización ya estaba inline, pero podemos añadir más aquí si es necesario */
-    border-radius: 4px; /* Consistencia con otros elementos */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+#image-preview { 
+    border-radius: 4px; 
+    object-fit: cover; 
 }
-/* === FIN: Estilos para el input de archivo y previsualización === */
-
 
 .btn-submit, .btn-primary { 
     background-color: var(--primary-color); color: white; padding: 10px 18px; border: none; border-radius: 5px; cursor: pointer; font-size: 15px; transition: background-color 0.2s ease; display: inline-block; text-align: center;
@@ -367,16 +355,15 @@ body {
     width: 100%; margin-top: 10px;
 }
 
-
 /* Estilos para la tabla de productos */
 .product-table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px; }
-.product-table th, .product-table td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: middle; /* Para alinear bien la imagen */}
+.product-table th, .product-table td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: middle; }
 .product-table th { background-color: #e9ecef; font-weight: 600; color: var(--text-color); }
 .product-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
 .product-table tbody tr:hover { background-color: #e9ecef; }
-.product-table img { /* Estilo para las imágenes dentro de la tabla */
-    display: block; /* Para evitar espacio extra debajo de la imagen */
-    margin: auto; /* Centrar si la celda es más ancha, opcional */
+.product-table img { 
+    display: block; 
+    margin: auto; 
 }
 .product-table .btn-edit-item, .product-table .btn-delete-item { background: none; border: none; cursor: pointer; padding: 5px; margin-right: 5px; font-size: 15px; opacity:0.7; }
 .product-table .btn-edit-item:hover, .product-table .btn-delete-item:hover {opacity:1;}
@@ -387,8 +374,7 @@ body {
 .low-stock-list { list-style: none; padding-left: 0; margin-top:15px; }
 .low-stock-list li { background-color: #fff3cd; border: 1px solid #ffeeba; padding: 10px 15px; margin-bottom: 8px; border-radius: 4px; color: #856404; font-size: 14px; }
 
-
-/* Responsivo */
+/* Estilos Responsivos */
 @media (max-width: 768px) {
     .sidebar { width: 70px; }
     .sidebar-header .logo-text { display: none; }
@@ -405,7 +391,7 @@ body {
     .modal-content { width: 95%; margin-top: 5%; }
 }
 
-/* Estilos para el <select> */
+/* Estilos para el <select> de ubicación */
 #inventory-form select#item-location-select {
     appearance: none; 
     -webkit-appearance: none;
