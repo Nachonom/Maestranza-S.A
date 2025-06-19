@@ -1,17 +1,18 @@
-/* Estilos Generales y Variables de la Pagina*/
+/* Estilos Generales y Variables CSS */
 :root {
     --primary-color: #007bff;
-    --sidebar-bg: #1e293b; 
+    --sidebar-bg: #1e293b; /* Azul oscuro/gris para la sidebar */
     --sidebar-text-color: #cbd5e1;
     --sidebar-active-bg: #334155;
     --sidebar-hover-bg: #2c3a4e;
-    --main-bg: #27e651; 
+    --main-bg: #a6f40b; /* Fondo claro para el área principal */
     --text-color: #333;
-    --text-muted-color: #6c757d;
-    --card-bg: #fafafa; 
+    --text-muted-color: #6c757d; /* Color original para texto silenciado */
+    --text-on-dark-bg: #f0f0f0; /* NUEVA VARIABLE: Texto claro para fondos oscuros */
+    --card-bg: #fafafa; /* Para modal y otros elementos claros */
     --card-border-color: #e2e8f0;
-    --header-bg: #ffffff;
-    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --header-bg: #063986; /* TU AZUL MARINO PARA HEADER Y FOOTER */
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* AJUSTE: Sombra un poco más notoria si se mantiene */
     --font-family: 'Roboto', sans-serif;
 
     --blue-accent: #2563eb;
@@ -19,12 +20,12 @@
     --yellow-accent: #f59e0b;
     --red-accent: #ef4444;
     --purple-accent: #8b5cf6;
-    --orange-accent: #f97316;
-    --teal-accent: #14b8a6; 
-    --dark-card-bg: #2d3748; 
+    --orange-accent: #f97316; /* Naranja para dashboard card */
+    --teal-accent: #14b8a6; /* Teal para dashboard card */
+    --dark-card-bg: #2d3748; /* ESTE ES EL IMPORTANTE PARA LAS TARJETAS DEL DASHBOARD */
 }
 
-/* Importacion de Google */
+/* Importar Google Font (Roboto) */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 * {
@@ -135,7 +136,7 @@ body {
 }
 
 
-/* Main7 Styles */
+/* Main Content Area Styles */
 .main-content {
     flex-grow: 1;
     display: flex;
@@ -148,17 +149,17 @@ body {
 
 /* Main Header Styles */
 .main-header {
-    background-color: var(--header-bg);
+    background-color: var(--header-bg); 
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--header-shadow);
+    box-shadow: var(--header-shadow); 
 }
 
 .header-title h1 {
     font-size: 24px;
-    color: var(--text-color);
+    color: var(--text-on-dark-bg); 
     font-weight: 600;
 }
 
@@ -172,19 +173,19 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
-    color: var(--text-muted-color);
+    color: var(--text-on-dark-bg); 
     font-size: 18px;
     position: relative; 
 }
 .notification-area:hover, .user-profile:hover, .theme-toggler:hover {
-    color: var(--primary-color);
+    color: #ffffff; 
 }
 
 .notification-badge {
     background-color: var(--red-accent);
-    color: white;
+    color: white; 
     border-radius: 50%;
-    padding: 1px 5px;
+    padding: 1px 5px; 
     font-size: 10px;
     position: absolute;
     top: -5px;  
@@ -201,17 +202,17 @@ body {
     font-size: 15px;
 }
 
-/* Contenido del Area Styles */
+/* Content Area Styles */
 .content-area {
     flex-grow: 1; 
     padding: 30px;
-    background-color: var(--main-bg);
+    background-color: var(--main-bg); 
 }
 
 .content-area h2 { 
     margin-bottom: 20px;
     font-size: 22px;
-    color: var(--text-color);
+    color: var(--text-color); 
     font-weight: 500;
 }
 
@@ -221,21 +222,20 @@ body {
     background-color: var(--header-bg); 
     padding: 15px 30px;
     text-align: center;
-    color: var(--text-muted-color);
+    color: var(--text-on-dark-bg); 
     font-size: 14px;
-    border-top: 1px solid var(--card-border-color);
+    border-top: 1px solid #002a5c; 
 }
 
-/* ESTILOS PARA LAS TARJETAS  */
+/* ESTILOS PARA LAS TARJETAS DEL DASHBOARD (OSCURAS) */
 .dashboard-grid { 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
     gap: 20px; 
 }
-
 .dashboard-card { 
     background-color: var(--dark-card-bg); 
-    color: white;
+    color: rgb(255, 255, 255); 
     padding: 20px;
     border-radius: 8px;
     display: flex;
@@ -245,12 +245,10 @@ body {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     cursor: pointer; 
 }
-
 .dashboard-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-
 .card-icon-container { 
     width: 48px;
     height: 48px;
@@ -261,29 +259,23 @@ body {
     margin-right: 15px;
     flex-shrink: 0;
 }
-
 .card-icon-container i { 
     font-size: 22px;
     color: white;
 }
-
 .card-info { 
     flex-grow: 1; 
 }
-
 .card-info h3 {
     font-size: 16px;
     font-weight: 500;
     margin: 0; 
 }
-
 .card-value { 
     font-size: 24px;
     font-weight: 700;
     margin-left: 10px; 
 }
-
-/* colores de acento para que se vea bien */
 .card-icon-container.blue { background-color: var(--blue-accent); }
 .card-icon-container.green { background-color: var(--green-accent); }
 .card-icon-container.yellow { background-color: var(--yellow-accent); }
@@ -295,84 +287,97 @@ body {
 
 /* Estilos para el Modal */
 .modal {
-  display: none;
-  position: fixed; 
-  z-index: 1000; 
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.6); 
+  display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); 
 }
 .modal-content {
-  background-color: var(--card-bg);
-  margin: 8% auto; 
-  padding: 25px 30px;
-  border: 1px solid var(--card-border-color);
-  width: 90%; 
-  max-width: 500px; 
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  position: relative;
+  background-color: var(--card-bg); margin: 8% auto; padding: 25px 30px; border: 1px solid var(--card-border-color); width: 90%; max-width: 500px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative;
 }
 .modal-content h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: var(--text-color);
-    font-size: 20px; 
+    margin-top: 0; margin-bottom: 20px; color: var(--text-color); font-size: 20px; 
 }
 .close-button { 
-  color: #777; 
-  float: right;
-  font-size: 26px;
-  font-weight: bold;
-  position: absolute;
-  top: 15px; 
-  right: 20px; 
-  line-height: 1;
+  color: #777; float: right; font-size: 26px; font-weight: bold; position: absolute; top: 15px; right: 20px; line-height: 1;
 }
 .close-button:hover, .close-button:focus {
-  color: #333; 
-  text-decoration: none;
-  cursor: pointer;
+  color: #333; text-decoration: none; cursor: pointer;
 }
 #inventory-form .form-group { margin-bottom: 15px; }
 #inventory-form label { display: block; margin-bottom: 6px; font-weight: 500; color: #444; font-size:14px; }
-#inventory-form input[type="text"], #inventory-form input[type="number"] {
-    width: 100%;
-    padding: 9px 12px; /* Ajustado padding */
+#inventory-form input[type="text"], 
+#inventory-form input[type="number"],
+#inventory-form select { /* AÑADIDO: select para que comparta estilos */
+    width: 100%; 
+    padding: 9px 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 15px;
+    background-color: white; /* Fondo blanco para el select */
+}
+
+/* === INICIO: Estilos para el input de archivo y previsualización === */
+#inventory-form input[type="file"] {
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    display: block; /* Para que ocupe su propia línea */
+    margin-top: 5px; /* Pequeño margen superior */
 }
-.btn-submit, .btn-primary { 
+
+/* Estilo para el botón del input de archivo en navegadores WebKit (Chrome, Safari, Edge) */
+#inventory-form input[type="file"]::-webkit-file-upload-button {
     background-color: var(--primary-color);
     color: white;
-    padding: 10px 18px;
+    padding: 8px 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.2s ease;
-    display: inline-block; 
-    text-align: center;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* Estilo estándar para el botón del input de archivo */
+#inventory-form input[type="file"]::file-selector-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+#image-preview { /* Estilo para la imagen de previsualización ya estaba inline, pero podemos añadir más aquí si es necesario */
+    border-radius: 4px; /* Consistencia con otros elementos */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+}
+/* === FIN: Estilos para el input de archivo y previsualización === */
+
+
+.btn-submit, .btn-primary { 
+    background-color: var(--primary-color); color: white; padding: 10px 18px; border: none; border-radius: 5px; cursor: pointer; font-size: 15px; transition: background-color 0.2s ease; display: inline-block; text-align: center;
 }
 .btn-submit:hover, .btn-primary:hover {
     background-color: #0056b3; 
 }
-#inventory-form .btn-submit {
-    width: 100%;
-    margin-top: 10px;
+#inventory-form .btn-submit { 
+    width: 100%; margin-top: 10px;
 }
 
 
 /* Estilos para la tabla de productos */
 .product-table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px; }
-.product-table th, .product-table td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; }
+.product-table th, .product-table td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: middle; /* Para alinear bien la imagen */}
 .product-table th { background-color: #e9ecef; font-weight: 600; color: var(--text-color); }
 .product-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
 .product-table tbody tr:hover { background-color: #e9ecef; }
+.product-table img { /* Estilo para las imágenes dentro de la tabla */
+    display: block; /* Para evitar espacio extra debajo de la imagen */
+    margin: auto; /* Centrar si la celda es más ancha, opcional */
+}
 .product-table .btn-edit-item, .product-table .btn-delete-item { background: none; border: none; cursor: pointer; padding: 5px; margin-right: 5px; font-size: 15px; opacity:0.7; }
 .product-table .btn-edit-item:hover, .product-table .btn-delete-item:hover {opacity:1;}
 .product-table .btn-edit-item i { color: var(--blue-accent); }
@@ -383,7 +388,7 @@ body {
 .low-stock-list li { background-color: #fff3cd; border: 1px solid #ffeeba; padding: 10px 15px; margin-bottom: 8px; border-radius: 4px; color: #856404; font-size: 14px; }
 
 
-/* Responsive Styles */
+/* Responsivo */
 @media (max-width: 768px) {
     .sidebar { width: 70px; }
     .sidebar-header .logo-text { display: none; }
@@ -398,4 +403,16 @@ body {
     .content-area { padding: 15px; }
     .dashboard-grid { grid-template-columns: 1fr; } 
     .modal-content { width: 95%; margin-top: 5%; }
+}
+
+/* Estilos para el <select> */
+#inventory-form select#item-location-select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px; 
 }
